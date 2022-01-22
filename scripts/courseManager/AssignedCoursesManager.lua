@@ -15,6 +15,7 @@ function AssignedCoursesManager:registerXmlSchema()
 	g_messageCenter:subscribe(MessageType.LOADED_ALL_SAVEGAME_VEHICLES,self.finishedLoading,self)
 	self.xmlSchema = XMLSchema.new("AssignedCourses")
 	CpCourseManager.registerXmlSchemaValues(self.xmlSchema, self.xmlKey)
+	self.xmlSchema:register(XMLValueType.STRING, self.baseXmlKey .. "#name", "Vehicle name")
 end
 
 --- Every valid vehicle will be added here, the id is needed to delete a sold vehicle form the table.
@@ -41,6 +42,7 @@ function AssignedCoursesManager:saveAssignedCourses(savegameDir)
 		--- Checks if the vehicle has courses.
 		if vehicle:hasCpCourse() then
 			local key = string.format("%s(%d).Course",self.baseXmlKey, ix)
+			xmlFile:setValue(self.baseXmlKey.."#name",vehicle:getName())
 			vehicle:saveAssignedCpCourses(xmlFile, key)
 			--- Sets a unique ID to the vehicle, so the assigned courses can be loaded correctly into the vehicle.
 			--- This ID is saved in the CpCourseManager Spec.
