@@ -64,7 +64,9 @@ function AssignedCoursesManager:loadAssignedCourses(savegameDir)
 end
 
 function AssignedCoursesManager:finishedLoading()
-	self.xmlFile:delete()
+	if self.xmlFile then
+		self.xmlFile:delete()
+	end
 end
 
 function AssignedCoursesManager:loadAssignedCoursesByVehicle(vehicle,id)
