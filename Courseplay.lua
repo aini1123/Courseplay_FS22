@@ -51,12 +51,15 @@ function Courseplay:loadMap(filename)
 	self:registerSchema()
 	self:load()
 	self:setupGui()
-	if g_currentMission.missionInfo.savegameDirectory ~= nil then
-		local filePath = g_currentMission.missionInfo.savegameDirectory .. "/Courseplay.xml"
+	self.savegamePath = g_currentMission.missionInfo.savegameDirectory .. "/Courseplay/"
+	if self.savegamePath ~= nil then
+		local filePath = self.savegamePath .. "Courseplay.xml"
 		self.xmlFile = XMLFile.load("cpXml", filePath , self.schema)
 		if self.xmlFile == nil then return end
 		self.globalSettings:loadFromXMLFile(self.xmlFile,g_Courseplay.BASE_KEY)
 		self.xmlFile:delete()
+
+		g_assignedCoursesManager:loadAssignedCourses(self.savegamePath)
 	end
 end
 
@@ -98,14 +101,17 @@ HelpLineManager.loadMapData = Utils.appendedFunction( HelpLineManager.loadMapDat
 
 function Courseplay.saveToXMLFile(missionInfo)
 	if missionInfo.isValid then 
-		local xmlFile = XMLFile.create("cpXml",missionInfo.savegameDirectory.. "/Courseplay.xml", 
-				"Courseplay", g_Courseplay.schema)
+		local path = missionInfo.savegameDirectory.."/Courseplay/"
+		createFolder(path)
+
+		local xmlFile = XMLFile.create("cpXml",path.. "Courseplay.xml", "Courseplay", g_Courseplay.schema)
 		g_Courseplay.globalSettings:saveToXMLFile(xmlFile,g_Courseplay.BASE_KEY)
 		xmlFile:save()
 		xmlFile:delete()
+		g_assignedCoursesManager:saveAssignedCourses(path)
 	end
 end
-FSCareerMissionInfo.saveToXMLFile = Utils.appendedFunction(FSCareerMissionInfo.saveToXMLFile,Courseplay.saveToXMLFile)
+FSCareerMissionInfo.saveToXMLFile = Utils.prependedFunction(FSCareerMissionInfo.saveToXMLFile,Courseplay.saveToXMLFile)
 
 function Courseplay:update(dt)
 	g_devHelper:update()
@@ -156,6 +162,8 @@ function Courseplay:load()
 	g_courseManger = self.courseStorage
 	g_courseDisplay = CourseDisplay()
 	g_vehicleConfigurations:loadFromXml()
+	g_assignedCoursesManager:registerXmlSchema()
+
 end
 
 function Courseplay:registerConsoleCommands()
