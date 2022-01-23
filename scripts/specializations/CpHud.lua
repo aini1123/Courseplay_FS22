@@ -216,7 +216,9 @@ end
 
 function CpHud:cpShowWorkWidth()
 	local spec = self.spec_cpHud
-	spec.lastShownWorkWidthTimeStamp = g_time
+	if spec then
+		spec.lastShownWorkWidthTimeStamp = g_time
+	end
 end
 
 function CpHud:cpInit()
