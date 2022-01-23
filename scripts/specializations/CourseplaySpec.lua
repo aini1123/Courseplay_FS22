@@ -30,6 +30,7 @@ function CourseplaySpec.registerFunctions(vehicleType)
     SpecializationUtil.registerFunction(vehicleType, 'getCpAdditionalHotspotDetails', CourseplaySpec.getCpAdditionalHotspotDetails)
     SpecializationUtil.registerFunction(vehicleType, 'cpInit', CourseplaySpec.cpInit)
     SpecializationUtil.registerFunction(vehicleType, 'getCpStatus', CourseplaySpec.getCpStatus)
+    SpecializationUtil.registerFunction(vehicleType, 'getIsMouseOverCpHud', CourseplaySpec.getIsMouseOverCpHud)
 end
 
 function CourseplaySpec.registerOverwrittenFunctions(vehicleType)
@@ -45,6 +46,11 @@ function CourseplaySpec:enterVehicleRaycastClickToSwitch(superFunc, x, y)
     if not spec.hud:isMouseOverArea(x, y) then 
         superFunc(self, x, y)
     end
+end
+
+function CourseplaySpec:getIsMouseOverCpHud()
+    local spec = self.spec_courseplaySpec
+    return spec.hud:getIsHovered()
 end
 
 function CourseplaySpec:onRegisterActionEvents(isActiveForInput, isActiveForInputIgnoreSelection)
@@ -86,7 +92,6 @@ function CourseplaySpec:onLoad(savegame)
     local specName = CourseplaySpec.MOD_NAME .. ".courseplaySpec"
     self.spec_courseplaySpec = self["spec_" .. specName]
     local spec = self.spec_courseplaySpec
-    spec.hud = CourseplayHud(self)
     spec.status = CpStatus(false)
 
 end
@@ -97,7 +102,8 @@ function CourseplaySpec:getCpStatus()
 end
 
 function CourseplaySpec:onPostLoad(savegame)
-
+    local spec = self.spec_courseplaySpec
+    spec.hud = CourseplayHud(self)
 end
 
 function CourseplaySpec:saveToXMLFile(xmlFile, baseKey, usedModNames)
