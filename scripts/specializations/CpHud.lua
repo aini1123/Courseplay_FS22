@@ -27,6 +27,7 @@ end
 
 function CpHud.registerEvents(vehicleType)
     SpecializationUtil.registerEvent(vehicleType, 'cpShowWorkWidth')
+    SpecializationUtil.registerEvent(vehicleType, 'cpUpdateMouseAction')
 end
 
 function CpHud.registerEventListeners(vehicleType)	
@@ -38,6 +39,7 @@ function CpHud.registerEventListeners(vehicleType)
     SpecializationUtil.registerEventListener(vehicleType, "onLeaveVehicle", CpHud)
     SpecializationUtil.registerEventListener(vehicleType, "onDraw", CpHud)
 	SpecializationUtil.registerEventListener(vehicleType, "cpShowWorkWidth", CpHud)
+    SpecializationUtil.registerEventListener(vehicleType, "cpUpdateMouseAction", CpHud)
 end
 
 function CpHud.registerFunctions(vehicleType)
@@ -90,17 +92,17 @@ function CpHud:onRegisterActionEvents(isActiveForInput, isActiveForInputIgnoreSe
         --- (actionEventsTable, inputAction, target,
         ---  callback, triggerUp, triggerDown, triggerAlways, startActive,
         ---  callbackState, customIconName, ignoreCollisions, reportAnyDeviceCollision)
-		if next(self.spec_cylindered.actionEvents) == nil then
+		if self:getCpSettings().openHudWithMouse:getValue() then
 			local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.CP_TOGGLE_MOUSE, self,
 					CpHud.actionEventMouse, false, true, false, true,nil,nil,true)
 			g_inputBinding:setActionEventTextPriority(actionEventId, GS_PRIO_NORMAL)
        		g_inputBinding:setActionEventText(actionEventId, spec.mouseText)
-		end
-	
-		local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.CP_OPEN_CLOSE_VEHICLE_SETTING_DISPLAY, self, 
-				CpHud.openClose, false, true, false, true, nil)
-		g_inputBinding:setActionEventTextPriority(actionEventId, GS_PRIO_NORMAL)
-		g_inputBinding:setActionEventText(actionEventId, spec.openCloseText)
+        else
+            local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.CP_OPEN_CLOSE_VEHICLE_SETTING_DISPLAY, self, 
+                    CpHud.openClose, false, true, false, true, nil)
+            g_inputBinding:setActionEventTextPriority(actionEventId, GS_PRIO_NORMAL)
+            g_inputBinding:setActionEventText(actionEventId, spec.openCloseText)
+        end
 
     end
 end
@@ -219,6 +221,10 @@ function CpHud:cpShowWorkWidth()
 	if spec then
 		spec.lastShownWorkWidthTimeStamp = g_time
 	end
+end
+
+function CpHud:cpUpdateMouseAction()
+    self:requestActionEventUpdate()
 end
 
 function CpHud:cpInit()

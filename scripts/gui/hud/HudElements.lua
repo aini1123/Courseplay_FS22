@@ -370,7 +370,7 @@ function CpHudSettingElement.new(parentHudElement, posX, posY, maxPosX, maxPosY,
     self.incrementalElement:setPosition(maxPosX,maxPosY)
     local w = self.incrementalElement:getWidth()
     local x = maxPosX - w*1.5
-    self.textElement = CpTextHudElement.new(parentHudElement, x, posY, textSize-4,RenderText.ALIGN_RIGHT)
+    self.textElement = CpTextHudElement.new(parentHudElement, x, posY, textSize-2,RenderText.ALIGN_RIGHT)
     self.textElement:setTextDetails("100.00")
     w = self.textElement:getWidth()
     self.decrementalElement = CpHudButtonElement.new(decrementalOverlay, parentHudElement)
