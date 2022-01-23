@@ -9,6 +9,7 @@ CpHud.NAME = ".cpHud"
 CpHud.SPEC_NAME = CpHud.MOD_NAME .. CpHud.NAME
 CpHud.KEY = "."..CpHud.MOD_NAME..CpHud.NAME .. "."
 CpHud.isHudActive = false
+CpHud.workWidthDisplayDelayMs = 5000 -- 5 seconds
 
 function CpHud.initSpecialization()
     local schema = Vehicle.xmlSchemaSavegame
@@ -24,6 +25,10 @@ function CpHud.register(typeManager,typeName,specializations)
 	end
 end
 
+function CpHud.registerEvents(vehicleType)
+    SpecializationUtil.registerEvent(vehicleType, 'cpShowWorkWidth')
+end
+
 function CpHud.registerEventListeners(vehicleType)	
 	SpecializationUtil.registerEventListener(vehicleType, "onRegisterActionEvents", CpHud)
 	SpecializationUtil.registerEventListener(vehicleType, "onLoad", CpHud)
@@ -32,6 +37,7 @@ function CpHud.registerEventListeners(vehicleType)
     SpecializationUtil.registerEventListener(vehicleType, "onEnterVehicle", CpHud)
     SpecializationUtil.registerEventListener(vehicleType, "onLeaveVehicle", CpHud)
     SpecializationUtil.registerEventListener(vehicleType, "onDraw", CpHud)
+	SpecializationUtil.registerEventListener(vehicleType, "cpShowWorkWidth", CpHud)
 end
 
 function CpHud.registerFunctions(vehicleType)
@@ -150,7 +156,7 @@ function CpHud:onLoad(savegame)
 	self.spec_cpHud = self["spec_" .. CpHud.SPEC_NAME]
     local spec = self.spec_cpHud
     spec.status = CpStatus(false)
-
+	spec.lastShownWorkWidthTimeStamp = g_time
 end
 
 function CpHud:getCpStatus()
@@ -198,6 +204,19 @@ end
 function CpHud:onDraw()
     local spec = self.spec_cpHud
     spec.hud:draw(spec.status)
+	if spec.hud:getIsOpen() then 
+		if spec.lastShownWorkWidthTimeStamp + CpHud.workWidthDisplayDelayMs > g_time then 
+			WorkWidthUtil.showWorkWidth(self,
+										self:getCourseGeneratorSettings().workWidth:getValue(),
+											self:getCpSettings().toolOffsetX:getValue(),
+											self:getCpSettings().toolOffsetZ:getValue())
+		end
+	end
+end
+
+function CpHud:cpShowWorkWidth()
+	local spec = self.spec_cpHud
+	spec.lastShownWorkWidthTimeStamp = g_time
 end
 
 function CpHud:cpInit()
