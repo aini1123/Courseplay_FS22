@@ -77,6 +77,9 @@ function CourseplayHud:init(vehicle)
     self.cpIcon = CpHudButtonElement.new(cpIconOverlay, self.baseHud)
     local x, y = unpack(self.lines[7].left)
     self.cpIcon:setPosition(x, y)
+    self.cpIcon:setCallback("onClickPrimary",self.vehicle,function (vehicle)
+                                self:openGlobalSettingsGui(vehicle)
+                            end)
 
 
     --- Title 
@@ -86,7 +89,7 @@ function CourseplayHud:init(vehicle)
     self.vehicleNameBtn:setCallback("onClickPrimary", self.vehicle, 
                                 function()
                                     self:openVehicleSettingsGui(self.vehicle)
-                                end, self.vehicle)
+                                end)
 
     --- Starting point
     self.startingPointBtn = self:addLeftLineTextButton(self.baseHud, 5, self.defaultFontSize, 
@@ -257,13 +260,13 @@ function CourseplayHud:draw(status)
     self.laneOffsetBtn:setTextDetails(laneOffset:getString())
 
     local workWidth = self.vehicle:getCourseGeneratorSettings().workWidth
-    self.workWidthBtn:setTextDetails(workWidth:getName(), workWidth:getString())
+    self.workWidthBtn:setTextDetails(workWidth:getTitle(), workWidth:getString())
 
     local toolOffsetX = self.vehicle:getCpSettings().toolOffsetX
-    self.toolOffsetXBtn:setTextDetails(toolOffsetX:getName(), toolOffsetX:getString())
+    self.toolOffsetXBtn:setTextDetails(toolOffsetX:getTitle(), toolOffsetX:getString())
 
     local toolOffsetZ = self.vehicle:getCpSettings().toolOffsetZ
-    self.toolOffsetZBtn:setTextDetails(toolOffsetZ:getName(), toolOffsetZ:getString())
+    self.toolOffsetZBtn:setTextDetails(toolOffsetZ:getTitle(), toolOffsetZ:getString())
 
     self.baseHud:draw()
 end
@@ -293,7 +296,7 @@ end
 
 function CourseplayHud:openCourseManagerGui(vehicle)
     local inGameMenu = self:preOpeningInGameMenu(vehicle)
-    local courseManagerPageIx = inGameMenu.pagingElement:getPageMappingIndexByElement(inGameMenu.pageCourseManager)
+    local courseManagerPageIx = inGameMenu.pagingElement:getPageMappingIndexByElement(inGameMenu.pageCpCourseManager)
     inGameMenu.pageSelector:setState(courseManagerPageIx, true)
 end
 
@@ -328,4 +331,10 @@ function CourseplayHud:openVehicleSettingsGui(vehicle)
     local inGameMenu = self:preOpeningInGameMenu(vehicle)
     local vehiclePageIx = inGameMenu.pagingElement:getPageMappingIndexByElement(inGameMenu.pageCpVehicleSettings)
     inGameMenu.pageSelector:setState(vehiclePageIx, true)
+end
+
+function CourseplayHud:openGlobalSettingsGui(vehicle)
+    local inGameMenu = self:preOpeningInGameMenu(vehicle)
+    local pageIx = inGameMenu.pagingElement:getPageMappingIndexByElement(inGameMenu.pageCpGlobalSettings)
+    inGameMenu.pageSelector:setState(pageIx, true)
 end
