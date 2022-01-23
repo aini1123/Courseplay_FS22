@@ -14,6 +14,7 @@ function CpHudElement.new(overlay,parentHudElement,customMt)
     self.callbacks = {}
     self.visible = true
     self.disabled = false
+    self.hovered = false
     return self
 end
 
@@ -364,15 +365,15 @@ function CpHudSettingElement.new(parentHudElement, posX, posY, maxPosX, maxPosY,
     self.labelElement = CpTextHudElement.new(parentHudElement, posX, posY, textSize)
     self.labelElement:setTextDetails("Label")
 
-    self.decrementalElement = CpHudButtonElement.new(decrementalOverlay, parentHudElement)
-    self.decrementalElement:setPosition(maxPosX,maxPosY)
-    local w = self.decrementalElement:getWidth()
-    local x = maxPosX - w
-    self.textElement = CpTextHudElement.new(parentHudElement, x, posY, textSize,RenderText.ALIGN_RIGHT)
+    self.incrementalElement = CpHudButtonElement.new(incrementalOverlay, parentHudElement)
+    self.incrementalElement:setPosition(maxPosX,maxPosY)
+    local w = self.incrementalElement:getWidth()
+    local x = maxPosX - w*1.5
+    self.textElement = CpTextHudElement.new(parentHudElement, x, posY, textSize-4,RenderText.ALIGN_RIGHT)
     self.textElement:setTextDetails("100.00")
     w = self.textElement:getWidth()
-    self.incrementalElement = CpHudButtonElement.new(incrementalOverlay, parentHudElement)
-    self.incrementalElement:setPosition(x-w*1.1, posY)
+    self.decrementalElement = CpHudButtonElement.new(decrementalOverlay, parentHudElement)
+    self.decrementalElement:setPosition(x-w*1.5, posY)
 
     return self
 end

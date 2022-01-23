@@ -56,3 +56,17 @@ function CpGlobalSettings:raiseCallback(callbackStr,...)
         self[callbackStr](self,...)
     end
 end
+
+function CpGlobalSettings:onHudSelectionChanged()
+    local vehicle = g_currentMission.controlledVehicle
+    if vehicle then 
+        self:debug("reset action events for %s",vehicle:getName())
+    --    g_inputBinding:setShowMouseCursor(false)
+        CpGuiUtil.setCameraRotation(vehicle, true, vehicle.spec_courseplaySpec.savedCameraRotatableInfo)
+        vehicle:requestActionEventUpdate()
+    end
+end
+
+function CpGlobalSettings:debug(str,...)
+    CpUtil.debugFormat(CpDebug.DBG_HUD,"Global settings: "..str,...)    
+end

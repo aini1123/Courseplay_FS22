@@ -123,8 +123,9 @@ end
 ---@param button number
 function Courseplay:mouseEvent(posX, posY, isDown, isUp, button)
 	local vehicle = g_currentMission.controlledVehicle
-	if vehicle and vehicle.spec_courseplaySpec then
-		vehicle.spec_courseplaySpec.hud:mouseEvent(posX, posY, isDown, isUp, button)
+	local hud = vehicle and vehicle.getCpHud and vehicle:getCpHud()
+	if hud then
+		hud:mouseEvent(posX, posY, isDown, isUp, button)
 	end
 end
 
@@ -303,6 +304,7 @@ function Courseplay.register(typeManager)
 		--- TODO: Implement this specialization
 		CpAIFieldWorker.register(typeManager,typeName,typeEntry.specializations)
 		CpVehicleSettingDisplay.register(typeManager,typeName,typeEntry.specializations)
+		CpHud.register(typeManager,typeName,typeEntry.specializations)
     end
 end
 TypeManager.finalizeTypes = Utils.prependedFunction(TypeManager.finalizeTypes, Courseplay.register)
