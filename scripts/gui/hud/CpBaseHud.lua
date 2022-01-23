@@ -36,7 +36,9 @@ function CpBaseHud:init(vehicle)
 
     self.uiScale = g_gameSettings:getValue("uiScale")
 
-    self.x, self.y = getNormalizedScreenValues(self.basePosition.x, self.basePosition.y)
+    if CpBaseHud.x == nil or CpBaseHud.y == nil then
+        CpBaseHud.x, CpBaseHud.y = getNormalizedScreenValues(self.basePosition.x, self.basePosition.y)
+    end
     self.width, self.height = getNormalizedScreenValues(self.baseSize.x * self.uiScale, self.baseSize.y * self.uiScale)
 
     local background = Overlay.new(g_baseUIFilename, 0, 0, 1, 1)
@@ -50,13 +52,13 @@ function CpBaseHud:init(vehicle)
 
     self.lines = {}
     for i=1,self.numLines do 
-        local y = self.y + self.hMargin + self.lineHeight * (i-1)
+        local y = CpBaseHud.y + self.hMargin + self.lineHeight * (i-1)
         local line = {
             left = {
-                self.x + self.wMargin, y
+                CpBaseHud.x + self.wMargin, y
             },
             right = {
-                self.x + self.width - self.wMargin, y
+                CpBaseHud.x + self.width - self.wMargin, y
             }
         }
         self.lines[i] = line
@@ -64,10 +66,10 @@ function CpBaseHud:init(vehicle)
 
 
     --- Root element
-    self.CpBaseHud = CpHudMoveableElement.new(background)
-    self.CpBaseHud:setPosition(self.x, self.y)
-    self.CpBaseHud:setDimension(self.width, self.height)
-
+    self.baseHud = CpHudMoveableElement.new(background)
+    self.baseHud:setPosition(CpBaseHud.x, CpBaseHud.y)
+    self.baseHud:setDimension(self.width, self.height)
+    self.baseHud:setCallback("onMove",self,self.moveToPosition)
     --------------------------------------
     --- Left side
     --------------------------------------
@@ -77,7 +79,7 @@ function CpBaseHud:init(vehicle)
     local cpIconOverlay =  Overlay.new(Utils.getFilename("img/courseplayIconHud.dds",Courseplay.BASE_DIRECTORY), 0, 0,cpIconWidth, height)
     cpIconOverlay:setAlignment(Overlay.ALIGN_VERTICAL_MIDDLE, Overlay.ALIGN_HORIZONTAL_LEFT)
     cpIconOverlay:setUVs(GuiUtils.getUVs({80, 26, 144, 144}, {256,256}))
-    self.cpIcon = CpHudButtonElement.new(cpIconOverlay, self.CpBaseHud)
+    self.cpIcon = CpHudButtonElement.new(cpIconOverlay, self.baseHud)
     local x, y = unpack(self.lines[7].left)
     self.cpIcon:setPosition(x, y)
     self.cpIcon:setCallback("onClickPrimary",self.vehicle,function (vehicle)
@@ -88,20 +90,20 @@ function CpBaseHud:init(vehicle)
     --- Title 
     local x,y = unpack(self.lines[7].left)
     x = x + cpIconWidth + self.wMargin
-    self.vehicleNameBtn = CpTextHudElement.new(self.CpBaseHud ,x , y, self.defaultFontSize)
+    self.vehicleNameBtn = CpTextHudElement.new(self.baseHud ,x , y, self.defaultFontSize)
     self.vehicleNameBtn:setCallback("onClickPrimary", self.vehicle, 
                                 function()
                                     self:openVehicleSettingsGui(self.vehicle)
                                 end)
 
     --- Starting point
-    self.startingPointBtn = self:addLeftLineTextButton(self.CpBaseHud, 5, self.defaultFontSize, 
+    self.startingPointBtn = self:addLeftLineTextButton(self.baseHud, 5, self.defaultFontSize, 
         function (vehicle)
             vehicle:getCpStartingPointSetting():setNextItem()
         end, self.vehicle)
 
      --- Course name
-    self.courseNameBtn = self:addLeftLineTextButton(self.CpBaseHud, 4, self.defaultFontSize, 
+    self.courseNameBtn = self:addLeftLineTextButton(self.baseHud, 4, self.defaultFontSize, 
                                                         function()
                                                             self:openCourseGeneratorGui(self.vehicle)
                                                         end, self.vehicle)
@@ -117,11 +119,11 @@ function CpBaseHud:init(vehicle)
     exitBtnOverlay:setAlignment(Overlay.ALIGN_VERTICAL_BOTTOM, Overlay.ALIGN_HORIZONTAL_RIGHT)
     exitBtnOverlay:setUVs(GuiUtils.getUVs(unpack(self.uvs.exitSymbol),{256,512}))
     exitBtnOverlay:setColor(unpack(CpBaseHud.OFF_COLOR))
-    self.exitBtn = CpHudButtonElement.new(exitBtnOverlay, self.CpBaseHud)
+    self.exitBtn = CpHudButtonElement.new(exitBtnOverlay, self.baseHud)
     local x, y = unpack(self.lines[7].right)
     self.exitBtn:setPosition(x, y)
     self.exitBtn:setCallback("onClickPrimary", self.vehicle, function (vehicle)
-        vehicle:resetCpHud()
+        vehicle:closeCpHud()
     end)
 
 
@@ -131,7 +133,7 @@ function CpBaseHud:init(vehicle)
     onOffIndicatorOverlay:setAlignment(Overlay.ALIGN_VERTICAL_BOTTOM, Overlay.ALIGN_HORIZONTAL_RIGHT)
     onOffIndicatorOverlay:setUVs(GuiUtils.getUVs(MixerWagonHUDExtension.UV.RANGE_MARKER_ARROW))
     onOffIndicatorOverlay:setColor(unpack(CpBaseHud.OFF_COLOR))
-    self.onOffButton = CpHudButtonElement.new(onOffIndicatorOverlay, self.CpBaseHud)
+    self.onOffButton = CpHudButtonElement.new(onOffIndicatorOverlay, self.baseHud)
     local x, y = unpack(self.lines[6].right)
     self.onOffButton:setPosition(x, y)
     self.onOffButton:setCallback("onClickPrimary", self.vehicle, self.vehicle.cpStartStopDriver)
@@ -139,13 +141,13 @@ function CpBaseHud:init(vehicle)
     
     
     --- Lane offset
-    self.laneOffsetBtn = self:addRightLineTextButton(self.CpBaseHud, 5, self.defaultFontSize, 
+    self.laneOffsetBtn = self:addRightLineTextButton(self.baseHud, 5, self.defaultFontSize, 
         function (vehicle)
             vehicle:getCpLaneOffsetSetting():setNextItem()
         end, self.vehicle)
   
     --- Waypoint progress
-    self.waypointProgressBtn = self:addRightLineTextButton(self.CpBaseHud, 4, self.defaultFontSize, 
+    self.waypointProgressBtn = self:addRightLineTextButton(self.baseHud, 4, self.defaultFontSize, 
                                                         function()
                                                             self:openCourseManagerGui(self.vehicle)
                                                         end, self.vehicle)
@@ -155,15 +157,15 @@ function CpBaseHud:init(vehicle)
     --------------------------------------
    
     --- Work width
-    self.workWidthBtn = self:addLineTextButton(self.CpBaseHud, 3, self.defaultFontSize, 
+    self.workWidthBtn = self:addLineTextButton(self.baseHud, 3, self.defaultFontSize, 
                                                 self.vehicle:getCourseGeneratorSettings().workWidth)
 
     --- Tool offset x
-    self.toolOffsetXBtn = self:addLineTextButton(self.CpBaseHud, 2, self.defaultFontSize, 
+    self.toolOffsetXBtn = self:addLineTextButton(self.baseHud, 2, self.defaultFontSize, 
                                                 self.vehicle:getCpSettings().toolOffsetX)
 
     --- Tool offset z
-    self.toolOffsetZBtn = self:addLineTextButton(self.CpBaseHud, 1, self.defaultFontSize, 
+    self.toolOffsetZBtn = self:addLineTextButton(self.baseHud, 1, self.defaultFontSize, 
                                                 self.vehicle:getCpSettings().toolOffsetZ)
 
     ---- Disables zoom, while mouse is over the cp hud. 
@@ -177,7 +179,7 @@ function CpBaseHud:init(vehicle)
     Enterable.actionEventCameraZoomIn = Utils.overwrittenFunction(Enterable.actionEventCameraZoomIn,disableCameraZoomOverHud)
     Enterable.actionEventCameraZoomOut = Utils.overwrittenFunction(Enterable.actionEventCameraZoomOut,disableCameraZoomOverHud)
 
-    self.CpBaseHud:setVisible(false)
+    self.baseHud:setVisible(false)
 end
 
 function CpBaseHud:addLeftLineTextButton(parent, line, textSize, callbackFunc,callbackClass)
@@ -248,23 +250,31 @@ function CpBaseHud:addLineTextButton(parent, line, textSize, setting)
     return element
 end
 
+function CpBaseHud:moveToPosition(x, y)
+    CpBaseHud.x = x 
+    CpBaseHud.y = y
+end
+
 function CpBaseHud:openClose(open)
-    self.CpBaseHud:setVisible(open)
+    self.baseHud:setVisible(open)
+    if open then 
+        self.baseHud:setPosition(CpBaseHud.x,CpBaseHud.y)
+    end
 end
 
 function CpBaseHud:getIsOpen()
-    return self.CpBaseHud:getVisible()
+    return self.baseHud:getVisible()
 end
 
 function CpBaseHud:mouseEvent(posX, posY, isDown, isUp, button)
-    local wasUsed = self.CpBaseHud:mouseEvent(posX, posY, isDown, isUp, button)
+    local wasUsed = self.baseHud:mouseEvent(posX, posY, isDown, isUp, button)
     if wasUsed then 
         return
     end
 end
 
 function CpBaseHud:isMouseOverArea(posX, posY)
-    return self.CpBaseHud:isMouseOverArea(posX, posY) 
+    return self.baseHud:isMouseOverArea(posX, posY) 
 end
 
 ---@param status CpStatus
@@ -294,15 +304,15 @@ function CpBaseHud:draw(status)
     local toolOffsetZ = self.vehicle:getCpSettings().toolOffsetZ
     self.toolOffsetZBtn:setTextDetails(toolOffsetZ:getTitle(), toolOffsetZ:getString())
 
-    self.CpBaseHud:draw()
+    self.baseHud:draw()
 end
 
 function CpBaseHud:delete()
-    self.CpBaseHud:delete()
+    self.baseHud:delete()
 end
 
 function CpBaseHud:getIsHovered()
-    return self.CpBaseHud:getIsHovered()    
+    return self.baseHud:getIsHovered()    
 end
 
 --------------------------------------

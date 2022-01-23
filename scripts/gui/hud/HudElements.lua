@@ -344,6 +344,7 @@ end
 
 function CpHudMoveableElement:moveTo(x, y)
     self:setPosition(x, y)
+    self:raiseCallback("onMove", {x, y})
 end
 
 

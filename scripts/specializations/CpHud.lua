@@ -8,6 +8,7 @@ CpHud.MOD_NAME = g_currentModName
 CpHud.NAME = ".cpHud"
 CpHud.SPEC_NAME = CpHud.MOD_NAME .. CpHud.NAME
 CpHud.KEY = "."..CpHud.MOD_NAME..CpHud.NAME .. "."
+CpHud.isHudActive = false
 
 function CpHud.initSpecialization()
     local schema = Vehicle.xmlSchemaSavegame
@@ -38,6 +39,7 @@ function CpHud.registerFunctions(vehicleType)
     SpecializationUtil.registerFunction(vehicleType, 'getCpStatus', CpHud.getCpStatus)
     SpecializationUtil.registerFunction(vehicleType, 'getIsMouseOverCpHud', CpHud.getIsMouseOverCpHud)
 	SpecializationUtil.registerFunction(vehicleType, 'resetCpHud', CpHud.resetCpHud)
+	SpecializationUtil.registerFunction(vehicleType, 'closeCpHud', CpHud.closeCpHud)
 	SpecializationUtil.registerFunction(vehicleType, 'getCpHud', CpHud.getCpHud)
 end
 
@@ -58,7 +60,7 @@ end
 
 function CpHud:getIsMouseOverCpHud()
     local spec = self.spec_cpHud
-    return spec.hud:getIsHovered()
+    return spec.hud:getIsOpen() and spec.hud:getIsHovered()
 end
 
 function CpHud:onRegisterActionEvents(isActiveForInput, isActiveForInputIgnoreSelection)
@@ -106,7 +108,7 @@ function CpHud:actionEventMouse()
 	if showMouseCursor then
 		local spec = self.spec_cpHud
 		spec.hud:openClose(true)
-		
+		CpHud.isHudActive = true
 	end
 end
 
@@ -114,7 +116,14 @@ function CpHud:resetCpHud()
 	g_inputBinding:setShowMouseCursor(false)
 	CpGuiUtil.setCameraRotation(self, true, self.spec_cpHud.savedCameraRotatableInfo)
     local spec = self.spec_cpHud
+--    spec.hud:openClose(false)
+end
+
+function CpHud:closeCpHud()
+	self:resetCpHud()
+	local spec = self.spec_cpHud
     spec.hud:openClose(false)
+	CpHud.isHudActive = false
 end
 
 function CpHud:getCpHud()
@@ -124,8 +133,10 @@ end
 
 function CpHud:openClose()
 	local spec = self.spec_cpHud
-	if spec.hud:getIsOpen() then 
+	if g_inputBinding:getShowMouseCursor() then 
 		self:resetCpHud()
+		spec.hud:openClose(false)
+		CpHud.isHudActive = false
 	else 
 		CpHud.actionEventMouse(self)
 	end
@@ -160,6 +171,8 @@ function CpHud:onEnterVehicle(isControlling)
     -- if the mouse cursor is shown when we enter the vehicle, disable camera rotations
     CpGuiUtil.setCameraRotation(self, not g_inputBinding:getShowMouseCursor(),
             self.spec_cpHud.savedCameraRotatableInfo)
+	local spec = self.spec_cpHud
+	spec.hud:openClose(CpHud.isHudActive)
 end
 
 function CpHud:onLeaveVehicle(wasEntered)
