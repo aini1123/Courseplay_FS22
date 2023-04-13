@@ -18,12 +18,12 @@
     <text name="CP_error_no_course" text="在开始任务之前创建或加载一个任务"/>
     <text name="CP_error_could_not_generate_course" text="无法创建任务"/>
     <text name="CP_error_not_on_field" text="不在田地中"/>
-    <text name="CP_error_unloader_to_far_away_from_field" text="Unloader to far away from the field."/>
-    <text name="CP_error_start_position_to_far_away_from_field" text="Starting position to far away from the field."/>
-    <text name="CP_error_giants_unloader_not_available" text="Giants unloader not available."/>
-    <text name="CP_error_fieldUnloadPosition_too_far_away_from_field" text="Field unload position is too far away from the field."/>
-    <text name="CP_error_no_bunkerSilo_found" text="No silo found."/>
-    <text name="CP_error_no_heap_found" text="No silo found."/>
+    <text name="CP_error_unloader_to_far_away_from_field" text="卸载机远离田地."/>
+    <text name="CP_error_start_position_to_far_away_from_field" text="起始位置远离田地."/>
+    <text name="CP_error_giants_unloader_not_available" text="巨型卸载机不可用."/>
+    <text name="CP_error_fieldUnloadPosition_too_far_away_from_field" text="田地卸载位置离字段太远."/>
+    <text name="CP_error_no_bunkerSilo_found" text="没有找到筒仓."/>
+    <text name="CP_error_no_heap_found" text="没有找到筒仓."/>
     <!---->
     <!--AI job parameters-->
     <!---->
@@ -37,18 +37,18 @@
     <text name="CP_bunkerSiloJobParameters_drivingForwardsIntoSilo_tooltip" text=""/>
     <text name="CP_bunkerSiloJobParameters_waitAtParkPosition_tooltip" text=""/>
     <text name="CP_jobParameters_fieldPosition_title" text="田地位置："/>
-    <text name="CP_jobParameters_bunkerSiloPosition_title" text="Silo position:"/>
-    <text name="CP_jobParameters_parkPosition_title" text="Park position:"/>
+    <text name="CP_jobParameters_bunkerSiloPosition_title" text="料仓位置:"/>
+    <text name="CP_jobParameters_parkPosition_title" text="驻车位置:"/>
     <text name="CP_jobParameters_subTitle_startAt" text="选择起始点:"/>
     <text name="CP_jobParameters_startAt_title" text="选择起始点:"/>
     <text name="CP_jobParameters_startAt_tooltip" text="该任务的起始点"/>
     <text name="CP_jobParameters_startAt_nearest" text="最近的点"/>
     <text name="CP_jobParameters_startAt_first" text="第一个点"/>
     <text name="CP_jobParameters_startAt_last" text="最后的点"/>
-    <text name="CP_jobParameters_startAt_bunkerSilo" text="Bunker silo mode"/>
-    <text name="CP_jobParameters_startAt_siloLoader" text="Silo load mode"/>
+    <text name="CP_jobParameters_startAt_bunkerSilo" text="料仓料仓模式"/>
+    <text name="CP_jobParameters_startAt_siloLoader" text="筒仓装载模式"/>
     <text name="CP_jobParameters_startAt_unload" text="开始卸货 联合收割机/青贮饲料收割机"/>
-    <text name="CP_jobParameters_startAt_unload_siloLoader" text="Unload Silo loader"/>
+    <text name="CP_jobParameters_startAt_unload_siloLoader" text="卸载筒仓装载机"/>
     <text name="CP_jobParameters_startAt_bales" text="扎捆/收集草垛"/>
     <text name="CP_jobParameters_subTitle_laneOffset" text="车道位置设置"/>
     <text name="CP_jobParameters_laneOffset_title" text="车道位置设置"/>
@@ -66,45 +66,45 @@
     <text name="CP_baleFinderJobParameters_baleWrapType_all_bales" text="所有草垛"/>
     <text name="CP_baleFinderJobParameters_baleWrapType_only_wrapped_bales" text="仅铝箔包装的草垛"/>
     <text name="CP_baleFinderJobParameters_baleWrapType_only_not_wrapped_bales" text="仅没有铝箔包装的草垛"/>
-    <text name="CP_baleFinder_balesLeftover" text="Bales left:"/>
+    <text name="CP_baleFinder_balesLeftover" text="左侧打捆:"/>
     <!---->
     <!--AI combine unloader job parameters-->
     <!---->
-    <text name="CP_combineUnloaderJobParameters_subTitle_unloadTarget" text="Unload: "/>
-    <text name="CP_combineUnloaderJobParameters_unloadTarget_title" text="Unload:"/>
-    <text name="CP_combineUnloaderJobParameters_unloadTarget_combine" text="Combine"/>
-    <text name="CP_combineUnloaderJobParameters_unloadTarget_siloLoader" text="Loader"/>
-    <text name="CP_combineUnloaderJobParameters_subTitle_giantsUnloader" text="Giants unloader:"/>
-    <text name="CP_combineUnloaderJobParameters_useGiantsUnload_title" text="Use giants unloader:"/>
-    <text name="CP_combineUnloaderJobParameters_unloadingStation_title" text="Unloading station:"/>
-    <text name="CP_combineUnloaderJobParameters_subTitle_fieldUnload" text="Giants unloader:"/>
-    <text name="CP_combineUnloaderJobParameters_useFieldUnload_title" text="Use unload on field:"/>
-    <text name="CP_combineUnloaderJobParameters_fieldUnloadPosition_title" text="Field unloading position:"/>
-    <text name="CP_combineUnloaderJobParameters_unloadingTipSide_title" text="Trailer tip side:"/>
+    <text name="CP_combineUnloaderJobParameters_subTitle_unloadTarget" text="卸载: "/>
+    <text name="CP_combineUnloaderJobParameters_unloadTarget_title" text="卸载:"/>
+    <text name="CP_combineUnloaderJobParameters_unloadTarget_combine" text="结合"/>
+    <text name="CP_combineUnloaderJobParameters_unloadTarget_siloLoader" text="装载机"/>
+    <text name="CP_combineUnloaderJobParameters_subTitle_giantsUnloader" text="巨型卸载机:"/>
+    <text name="CP_combineUnloaderJobParameters_useGiantsUnload_title" text="使用巨型卸载机:"/>
+    <text name="CP_combineUnloaderJobParameters_unloadingStation_title" text="卸载站:"/>
+    <text name="CP_combineUnloaderJobParameters_subTitle_fieldUnload" text="巨型卸载机:"/>
+    <text name="CP_combineUnloaderJobParameters_useFieldUnload_title" text="在田地上使用卸载:"/>
+    <text name="CP_combineUnloaderJobParameters_fieldUnloadPosition_title" text="田地卸货位置:"/>
+    <text name="CP_combineUnloaderJobParameters_unloadingTipSide_title" text="拖车尖端侧:"/>
     <!---->
     <!--AI bunker silo worker job parameters-->
     <!---->
-    <text name="CP_bunkerSiloJobParameters_subTitle_drivingForwardsIntoSilo" text="Direction into the silo:"/>
-    <text name="CP_bunkerSiloJobParameters_drivingForwardsIntoSilo_title" text="Direction into the silo:"/>
-    <text name="CP_bunkerSiloJobParameters_drivingForwardsIntoSilo_forwards" text="Forwards"/>
-    <text name="CP_bunkerSiloJobParameters_drivingForwardsIntoSilo_reverse" text="Reverse"/>
-    <text name="CP_bunkerSiloJobParameters_subTitle_waitAtParkPosition" text="Waiting for unloader:"/>
-    <text name="CP_bunkerSiloJobParameters_waitAtParkPosition_title" text="Waiting for unloader:"/>
-    <text name="CP_bunkerSiloJobParameters_waitAtParkPosition_silo" text="in silo"/>
-    <text name="CP_bunkerSiloJobParameters_waitAtParkPosition_parkPosition" text="at park position"/>
+    <text name="CP_bunkerSiloJobParameters_subTitle_drivingForwardsIntoSilo" text="进入筒仓的方向:"/>
+    <text name="CP_bunkerSiloJobParameters_drivingForwardsIntoSilo_title" text="进入筒仓的方向:"/>
+    <text name="CP_bunkerSiloJobParameters_drivingForwardsIntoSilo_forwards" text="向前方"/>
+    <text name="CP_bunkerSiloJobParameters_drivingForwardsIntoSilo_reverse" text="颠倒"/>
+    <text name="CP_bunkerSiloJobParameters_subTitle_waitAtParkPosition" text="正在等待卸载:"/>
+    <text name="CP_bunkerSiloJobParameters_waitAtParkPosition_title" text="正在等待卸载:"/>
+    <text name="CP_bunkerSiloJobParameters_waitAtParkPosition_silo" text="筒仓内"/>
+    <text name="CP_bunkerSiloJobParameters_waitAtParkPosition_parkPosition" text="处于停车位置"/>
     <!---->
     <!--AI silo lader worker job parameters-->
     <!---->
-    <text name="CP_siloLoaderJobParameters_subTitle_loadPosition" text="Loading position"/>
-    <text name="CP_siloLoaderJobParameters_loadPosition_title" text="Loading position"/>
+    <text name="CP_siloLoaderJobParameters_subTitle_loadPosition" text="装载位置"/>
+    <text name="CP_siloLoaderJobParameters_loadPosition_title" text="装载位置"/>
     <!---->
     <!--AI jobs-->
     <!---->
     <text name="CP_job_fieldWork" text="CP: 田地工作"/>
     <text name="CP_job_baleCollect" text="CP: 扎捆/收集草垛"/>
-    <text name="CP_job_combineUnload" text="CP: Unload Combine"/>
-    <text name="CP_job_bunkerSilo" text="CP: Silo work"/>
-    <text name="CP_job_siloLoader" text="CP: Silo loading"/>
+    <text name="CP_job_combineUnload" text="CP: 卸载联合收割机"/>
+    <text name="CP_job_bunkerSilo" text="CP: 筒仓工做"/>
+    <text name="CP_job_siloLoader" text="CP: 筒仓装载"/>
     <text name="CP_ai_page_generate_course" text="CP: 生成田地工作路线"/>
     <text name="CP_ai_page_open_course_generator" text="CP: 打开/关闭 创建工作路线界面"/>
     <!---->
@@ -113,8 +113,8 @@
     <text name="CP_ai_messageErrorIsFull" text="工人%s 停止工作-储存箱已满!"/>
     <text name="CP_ai_messageError" text="AI 帮手 %s 意外停止工作 - 离开了路线！"/>
     <text name="CP_ai_messageErrorWrongBaleWrapType" text="AI 帮手 %s 已意外停止工作 - 未找到选定类型的草垛！"/>
-    <text name="CP_ai_messageErrorNoPathFound" text="AI worker %s has stopped work unexpectedly - no Path found!"/>
-    <text name="CP_ai_messageErrorGroundUnloadNotSupported" text="AI worker %s has stopped work unexpectedly - unloading on the field not possible!"/>
+    <text name="CP_ai_messageErrorNoPathFound" text="AI工作人员%s已意外停止工作-找不到路径!"/>
+    <text name="CP_ai_messageErrorGroundUnloadNotSupported" text="人工智能工作人员%s意外停止工作-无法在现场卸载!"/>
     <!---->
     <!--Vehicle settings-->
     <!---->
@@ -129,7 +129,7 @@
     <text name="CP_vehicle_setting_showCourse_title" text="显示路线"/>
     <text name="CP_vehicle_setting_showCourse_tooltip" text="显示当前车辆的工作路线。"/>
     <text name="CP_vehicle_setting_showCourse_startStop" text="仅限起始点/终点"/>
-    <text name="CP_vehicle_setting_showCourse_currentWaypoint" text="Current waypoints"/>
+    <text name="CP_vehicle_setting_showCourse_currentWaypoint" text="当前航路点"/>
     <text name="CP_vehicle_setting_showCourse_all" text="所有点"/>
     <text name="CP_vehicle_setting_openHudWithMouse_title" text="用鼠标打开Hud"/>
     <text name="CP_vehicle_setting_openHudWithMouse_tooltip" text="右键打开HUD。 如果关闭，则仅使用键盘快捷键打开 HUD。"/>
@@ -143,8 +143,8 @@
     <text name="CP_vehicle_setting_allowPathfinderTurns_tooltip" text="如果有必要，允许路径查找生成带有弯道的路径，例如规避障碍或作物。"/>
     <text name="CP_vehicle_setting_foldImplementAtEnd_title" text="工作结束时收起工具"/>
     <text name="CP_vehicle_setting_foldImplementAtEnd_tooltip" text="开启/关闭 工作结束时工具的自动收起。"/>
-    <text name="CP_vehicle_setting_returnToStart_title" text="Return to starting point"/>
-    <text name="CP_vehicle_setting_returnToStart_tooltip" text="Return to starting point after finished fieldwork."/>
+    <text name="CP_vehicle_setting_returnToStart_title" text="返回起点"/>
+    <text name="CP_vehicle_setting_returnToStart_tooltip" text="实地考察结束后返回起点."/>
     <text name="CP_vehicle_setting_raiseImplementLate_title" text="升起工具"/>
     <text name="CP_vehicle_setting_raiseImplementLate_tooltip" text="在转向开始时提前或晚些升起工具。"/>
     <text name="CP_vehicle_setting_raiseImplementLate_early" text="提前"/>
@@ -161,22 +161,22 @@
     <text name="CP_vehicle_setting_toolOffsetX_tooltip" text="工具横向调整"/>
     <text name="CP_vehicle_setting_toolOffsetZ_title" text="工具纵向调整"/>
     <text name="CP_vehicle_setting_toolOffsetZ_tooltip" text="工具纵向调整"/>
-    <text name="CP_vehicle_setting_fullThreshold_title" text="Empty when over:"/>
-    <text name="CP_vehicle_setting_fullThreshold_tooltip" text="TODO"/>
+    <text name="CP_vehicle_setting_fullThreshold_title" text="结束时清空:"/>
+    <text name="CP_vehicle_setting_fullThreshold_tooltip" text="要做的事"/>
     <text name="CP_vehicle_setting_useAdditiveFillUnit_title" text="检查青贮添加剂"/>
     <text name="CP_vehicle_setting_useAdditiveFillUnit_tooltip" text="工作中的车辆青贮添加剂存箱是空的会停止工作。"/>
     <text name="CP_vehicle_setting_symmetricLaneChange_title" text="对称变道"/>
     <text name="CP_vehicle_setting_symmetricLaneChange_tooltip" text="对称变道"/>
     <text name="CP_vehicle_setting_convoyDistance_title" text="车辆距离"/>
-    <text name="CP_vehicle_setting_convoyDistance_tooltip" text="车辆之间的距离。 数值范围: 40 - 400"/>
+    <text name="CP_vehicle_setting_convoyDistance_tooltip" text="车辆之间的距离. 数值范围: 40 - 400"/>
     <text name="CP_vehicle_setting_debugActive_title" text="车辆调试"/>
     <text name="CP_vehicle_setting_debugActive_tooltip" text="启用/禁用此车辆的调试。"/>
     <!---->
     <!--Vehicle bunker silo settings-->
     <!---->
-    <text name="CP_vehicle_setting_subTitle_bunkerSilo" text="Siloworker settings"/>
-    <text name="CP_vehicle_setting_bunkerSiloWorkWidth_title" text="Work width"/>
-    <text name="CP_vehicle_setting_bunkerSiloWorkWidth_tooltip" text="Work width. Value: 0 - 50"/>
+    <text name="CP_vehicle_setting_subTitle_bunkerSilo" text="筒仓工作人员设置"/>
+    <text name="CP_vehicle_setting_bunkerSiloWorkWidth_title" text="工作宽度"/>
+    <text name="CP_vehicle_setting_bunkerSiloWorkWidth_tooltip" text="工作宽度.数值范围：0-50"/>
     <!---->
     <!--Vehicle settings speed-->
     <!---->
@@ -188,8 +188,8 @@
     <text name="CP_vehicle_setting_turnSpeed_tooltip" text="转向时的最大速度。 数值范围: 2 - 25"/>
     <text name="CP_vehicle_setting_reverseSpeed_title" text="倒车"/>
     <text name="CP_vehicle_setting_reverseSpeed_tooltip" text="倒车时最大速度。 数值范围: 2 - 25"/>
-    <text name="CP_vehicle_setting_bunkerSiloSpeed_title" text="Silo"/>
-    <text name="CP_vehicle_setting_bunkerSiloSpeed_tooltip" text="Maximum speed while driving in a silo. Value: 2 - 25"/>
+    <text name="CP_vehicle_setting_bunkerSiloSpeed_title" text="筒仓"/>
+    <text name="CP_vehicle_setting_bunkerSiloSpeed_tooltip" text="在筒仓中行驶时的最大速度. 数值范围: 2 - 25"/>
     <!---->
     <!--Vehicle settings sowing-->
     <!---->
@@ -299,8 +299,8 @@
     <text name="CP_global_setting_fuelThreshold_tooltip" text="如果燃料剩余量过低，司机将停止工作。"/>
     <text name="CP_global_setting_brokenThreshold_title" text="损坏临界值"/>
     <text name="CP_global_setting_brokenThreshold_tooltip" text="如果车辆或工具损坏过多，司机将停止工作。100%为关闭。"/>
-    <text name="CP_global_setting_stopThreshingDuringRain_title" text="Stops harvester, while it's raining"/>
-    <text name="CP_global_setting_stopThreshingDuringRain_tooltip" text="If the setting is active, then all harvester wait for the raining to stop."/>
+    <text name="CP_global_setting_stopThreshingDuringRain_title" text="下雨时停止收割机"/>
+    <text name="CP_global_setting_stopThreshingDuringRain_tooltip" text="如果该设置处于激活状态，则所有收割机等待降雨停止."/>
     <text name="CP_global_setting_subTitle_userSettings" text="用户设置"/>
     <text name="CP_global_setting_controllerHudSelected_title" text="手柄控制HUB"/>
     <text name="CP_global_setting_controllerHudSelected_tooltip" text="HUD（游戏内CP界面）可搭配游戏手柄使用。"/>
@@ -313,18 +313,18 @@
     <text name="CP_global_setting_deltaAngleRelaxFactorDeg_tooltip" text="允许在每次创建路径时放宽路径搜索的限制。值越高，计算速度越快。"/>
     <text name="CP_global_setting_showsAllActiveCourses_title" text="显示所有活动任务 "/>
     <text name="CP_global_setting_showsAllActiveCourses_tooltip" text="在地图上显示所有活动任务。 "/>
-    <text name="CP_global_setting_drawOntoTheHudMap_title" text="Schows courses on the minimap"/>
-    <text name="CP_global_setting_drawOntoTheHudMap_tooltip" text="Enables drawing of the course onto the mini map."/>
+    <text name="CP_global_setting_drawOntoTheHudMap_title" text="修习关于极小映射的课程"/>
+    <text name="CP_global_setting_drawOntoTheHudMap_tooltip" text="允许在迷你地图上绘制课程."/>
     <text name="CP_global_setting_infoTextHudActive_title" text="显示信息文本窗口 "/>
     <text name="CP_global_setting_infoTextHudActive_tooltip" text="显示一个信息文本窗口。"/>
     <text name="CP_global_setting_infoTextHudPlayerMouseActive_title" text="车外鼠标交互"/>
     <text name="CP_global_setting_infoTextHudPlayerMouseActive_tooltip" text="启用/禁用车辆外的鼠标交互。"/>
     <text name="CP_global_setting_preferCustomFields_title" text="首选自定义田地"/>
     <text name="CP_global_setting_preferCustomFields_tooltip" text="使用自定义田地，即使有原始田地。"/>
-    <text name="CP_global_setting_distanceUnit_title" text="Distance unit"/>
-    <text name="CP_global_setting_distanceUnit_tooltip" text="Distance unit meter or Foot."/>
-    <text name="CP_global_setting_distanceUnit_meter" text="Meter"/>
-    <text name="CP_global_setting_distanceUnit_imperial" text="Foot"/>
+    <text name="CP_global_setting_distanceUnit_title" text="距离单位"/>
+    <text name="CP_global_setting_distanceUnit_tooltip" text="距离单位为米或英尺."/>
+    <text name="CP_global_setting_distanceUnit_meter" text="米"/>
+    <text name="CP_global_setting_distanceUnit_imperial" text="英尺"/>
     <!---->
     <!--Course manager-->
     <!---->
@@ -334,7 +334,7 @@
     <text name="CP_courseManager_change_mode" text="更改模式"/>
     <text name="CP_courseManager_load_courses" text="加载任务"/>
     <text name="CP_courseManager_save_courses" text="保存任务"/>
-    <text name="CP_courseManager_edit_course" text="Open course editor"/>
+    <text name="CP_courseManager_edit_course" text="开放式课程编辑器"/>
     <text name="CP_courseManager_clear_current_courses" text="清除当前任务"/>
     <text name="CP_courseManager_create_directory" text="创建新文件夹"/>
     <text name="CP_courseManager_move_entry" text="移动"/>
@@ -343,10 +343,10 @@
     <text name="CP_courseManager_copy_entry" text="复制"/>
     <text name="CP_courseManager_folder_dialog" text="文件夹名称:"/>
     <text name="CP_courseManager_course_dialog" text="任务名称:"/>
-    <text name="CP_courseManager_deleteWarning" text="Are you sure, you want to delete (%s)?"/>
-    <text name="CP_courseManager_editCourseWarning" text="Course editing might create problems for the course drivers.
-You should only use this tool, when the course generator can't create a good enough course.
-The course is saved automatically on closing of the editor and overrides the selected course.
+    <text name="CP_courseManager_deleteWarning" text="您确定要删除（%s）吗？"/>
+    <text name="CP_courseManager_editCourseWarning" text="课程编辑可能会给课程驱动程序带来问题。
+只有当课程生成器无法创建足够好的课程时，才应该使用此工具。
+课程在关闭编辑器时自动保存，并覆盖选定的课程.
 "/>
     <text name="CP_courseManager_deleteError" text="文件夹不是空的 (%s)!"/>
     <text name="CP_courseManager_entryExistAlreadyError" text="文件已经存在于目标文件夹中 (%s)!"/>
@@ -359,31 +359,31 @@ The course is saved automatically on closing of the editor and overrides the sel
     <!---->
     <!--Course editor-->
     <!---->
-    <text name="CP_editor_course_title" text="Course editor"/>
-    <text name="CP_editor_delete_title" text="Delete waypoints"/>
-    <text name="CP_editor_delete_primary_text" text="primary"/>
-    <text name="CP_editor_delete_secondary_text" text="secondary"/>
-    <text name="CP_editor_delete_tertiary_text" text="Deletes all waypoints until the last waypoint."/>
-    <text name="CP_editor_delete_yesNo_deleteToLastWp_title" text="Are you sure, that all waypoint till the last one should be deleted?"/>
-    <text name="CP_editor_delete_err" text="To few waypoints left."/>
-    <text name="CP_editor_course_basic_title" text="Basic"/>
-    <text name="CP_editor_course_basic_move_title" text="Move a waypoint"/>
-    <text name="CP_editor_course_basic_move_primary_text" text="primary"/>
-    <text name="CP_editor_course_basic_insert_title" text="Insert waypoints"/>
-    <text name="CP_editor_course_basic_insert_primary_text" text="primary"/>
-    <text name="CP_editor_course_basic_insert_secondary_text" text="secondary"/>
-    <text name="CP_editor_course_basic_insert_err" text="Inserting between a turning point is not allowed."/>
-    <text name="CP_editor_course_advanced_title" text="Advanced"/>
-    <text name="CP_editor_course_advanced_changeTurn_title" text="Marks a waypoint as turn."/>
-    <text name="CP_editor_course_advanced_changeTurn_primary_text" text="Adds or deletes a turning point. (The selected waypoint will be the turn start.)"/>
-    <text name="CP_editor_course_advanced_changeTurn_err" text="To close to another turning point."/>
-    <text name="CP_editor_course_advanced_moveExtended_title" text="Moves multiple waypoints"/>
-    <text name="CP_editor_course_advanced_moveExtended_primary_text" text="primary"/>
-    <text name="CP_editor_course_advanced_moveExtended_secondary_text" text="secondary"/>
-    <text name="CP_editor_course_advanced_curveInsert_title" text="Inserts waypoints as curve"/>
-    <text name="CP_editor_course_advanced_curveInsert_primary_text" text="primary"/>
-    <text name="CP_editor_course_advanced_curveInsert_secondary_text" text="secondary"/>
-    <text name="CP_editor_course_advanced_curveInsert_err" text="Selecting a turning point is not allowed."/>
+    <text name="CP_editor_course_title" text="课程编辑器"/>
+    <text name="CP_editor_delete_title" text="删除航路点"/>
+    <text name="CP_editor_delete_primary_text" text="主要的"/>
+    <text name="CP_editor_delete_secondary_text" text="次要的"/>
+    <text name="CP_editor_delete_tertiary_text" text="删除所有航路点，直到最后一个航路点."/>
+    <text name="CP_editor_delete_yesNo_deleteToLastWp_title" text="你确定吗，直到最后一个航路点之前的所有航路点都应该被删除?"/>
+    <text name="CP_editor_delete_err" text="到剩下的几个路点."/>
+    <text name="CP_editor_course_basic_title" text="基本的"/>
+    <text name="CP_editor_course_basic_move_title" text="移动一个航路点"/>
+    <text name="CP_editor_course_basic_move_primary_text" text="主要的"/>
+    <text name="CP_editor_course_basic_insert_title" text="插入航路点"/>
+    <text name="CP_editor_course_basic_insert_primary_text" text="主要的"/>
+    <text name="CP_editor_course_basic_insert_secondary_text" text="次要的"/>
+    <text name="CP_editor_course_basic_insert_err" text="不允许在转弯点之间插入."/>
+    <text name="CP_editor_course_advanced_title" text="高级的"/>
+    <text name="CP_editor_course_advanced_changeTurn_title" text="将航路点标记为转弯."/>
+    <text name="CP_editor_course_advanced_changeTurn_primary_text" text="添加或删除转折点。（选定的航路点将是转弯起点.)"/>
+    <text name="CP_editor_course_advanced_changeTurn_err" text="接近另一个转折点."/>
+    <text name="CP_editor_course_advanced_moveExtended_title" text="移动多个航路点"/>
+    <text name="CP_editor_course_advanced_moveExtended_primary_text" text="主要的"/>
+    <text name="CP_editor_course_advanced_moveExtended_secondary_text" text="次要的"/>
+    <text name="CP_editor_course_advanced_curveInsert_title" text="将路线点插入为曲线"/>
+    <text name="CP_editor_course_advanced_curveInsert_primary_text" text="主要的"/>
+    <text name="CP_editor_course_advanced_curveInsert_secondary_text" text="次要的"/>
+    <text name="CP_editor_course_advanced_curveInsert_err" text="不允许选择转折点."/>
     <!---->
     <!--Info texts-->
     <!---->
@@ -395,15 +395,15 @@ The course is saved automatically on closing of the editor and overrides the sel
     <text name="CP_infoTexts_needsFilling" text="需要重新填充"/>
     <text name="CP_infoTexts_needsUnloading" text="需要卸载"/>
     <text name="CP_infoTexts_workFinished" text="完成工作"/>
-    <text name="CP_infoTexts_drivingToCombine" text="Driving to combine"/>
-    <text name="CP_infoTexts_drivingToSelfUnload" text="Driving to trailer"/>
+    <text name="CP_infoTexts_drivingToCombine" text="驾驶至联合收割机"/>
+    <text name="CP_infoTexts_drivingToSelfUnload" text="行驶至拖车"/>
     <text name="CP_infoTexts_outOfMoney" text="资金不足"/>
     <text name="CP_infoTexts_waitForRainToFinish" text="等待雨停"/>
-    <text name="CP_infoTexts_waitForUnloader" text="Waiting on unloader"/>
+    <text name="CP_infoTexts_waitForUnloader" text="正在等待卸载机"/>
     <text name="CP_infoTexts_errorStopped" text="离开了路线，停止工作"/>
     <text name="CP_infoTexts_wrongBaleWrapType" text="错误的草垛类型"/>
-    <text name="CP_infoTexts_errorNoPathFound" text="No path found"/>
-    <text name="CP_infoTexts_errorGroundUnloadNotSupported" text="Tipping to ground not possible"/>
+    <text name="CP_infoTexts_errorNoPathFound" text="未找到路径"/>
+    <text name="CP_infoTexts_errorGroundUnloadNotSupported" text="不可能倾斜到地面"/>
     <!---->
     <!--Custom field manager-->
     <!---->
@@ -411,15 +411,15 @@ The course is saved automatically on closing of the editor and overrides the sel
     <text name="CP_customFieldManager_confirm_delete" text="要删除自定义田地吗 %s?"/>
     <text name="CP_customFieldManager_delete" text="删除自定义田地"/>
     <text name="CP_customFieldManager_rename" text="重命名自定义田地"/>
-    <text name="CP_customFieldManager_rename_error" text="Custom field name %s already in use."/>
-    <text name="CP_customFieldManager_edit" text="Edit custom field"/>
+    <text name="CP_customFieldManager_rename_error" text="自定义田地名%s已在使用."/>
+    <text name="CP_customFieldManager_edit" text="编辑自定义田地"/>
     <text name="CP_customFieldManager_draw" text="绘制自定义田地"/>
     <text name="CP_customFieldManager_draw_header" text="右键绘制自定义田地范围"/>
     <text name="CP_customFieldManager_save" text="保存自定义田地"/>
     <text name="CP_controllerGui_startRecording" text="开始自定义田地记录。"/>
     <text name="CP_controllerGui_stopRecording" text="停止自定义田地记录。"/>
-    <text name="CP_controllerGui_pauseRecording" text="Pause custom field recording."/>
-    <text name="CP_controllerGui_unpauseRecording" text="Unpause custom field recording."/>
+    <text name="CP_controllerGui_pauseRecording" text="暂停自定义田地录制."/>
+    <text name="CP_controllerGui_unpauseRecording" text="取消使用自定义田地录制."/>
     <!---->
     <!--Help menu-->
     <!---->
@@ -688,102 +688,102 @@ R: 从剪贴板中删除复制的路线。
 喷雾器工作在葡萄藤旁边，所以它必须从葡萄藤上向左或向右行驶。
 由于喷雾器可以同时在左右藤上工作，我们可以跳过一行。
 "/>
-    <text name="CP_help_page_editor_title" text="Course editor"/>
+    <text name="CP_help_page_editor_title" text="课程编辑器"/>
     <text name="CP_help_page_editorGeneral_text" text="
-The course editor can be used to edit courses and custom fields.
-The loaded courses will be saved/overritten automatically, when the editor is closed.
-
-1) Editing a custom field can be done with a selected field on the ai menu page.
-2) Editing a course can be done in the course manager. 
-   There you can edit a saved course, but be sure you cleared the currently loaded course from the vehicle.
-
-Editing of course should only be done, when the course generator can't produce a good enough course.
-Incorrect editing might couse problems for the cp driver, as the waypoints have hidden attributes.
+课程编辑器可用于编辑课程和自定义田地。
+当编辑器关闭时，加载的课程将自动保存/覆盖。
+1） 编辑自定义田地可以使用ai菜单页面上的选定字段来完成。
+2） 编辑课程可以在课程管理器中完成。
+在那里，您可以编辑保存的路线，但请确保您从车辆中清除了当前加载的路线。
+当然，只有当课程生成器无法生成足够好的课程时，才应该进行课程编辑。
+错误的编辑可能会给cp驱动程序带来问题，因为路点具有隐藏的属性.
 "/>
     <text name="CP_help_page_editorBasic_text" text="
-Under the basic category are:
-1) The move brush moves a hovered waypoint to the brush position.
-2) The insert brush can insert waypoints ahead or behind of a selected waypoint.
-
-Deleting of waypoints can be done with the red delete button.
+基本类别下有：
+1） 移动笔刷将悬停的航路点移动到笔刷位置。
+2） 插入画笔可以在选定航路点的前面或后面插入航路点。
+可以使用红色删除按钮删除航路点.
 "/>
     <text name="CP_help_page_editorAdvanced_text" text="
-Under the advanced category are:
-1) A brush to move multiple waypoints in between to selected waypoints.
-2) A brush to insert a curve of waypoints between to selected waypoints.
-3) A brush to set the turn attribute of a waypoint(only with a course and not a custom field).
+高级类别下有：
+1） 用于将其间的多个路点移动到选定路点的笔刷。
+2） 在选定的路点之间插入路点曲线的笔刷。
+3） 用于设置航路点转弯属性的画笔（仅适用于航线，而非自定义田地）.
 "/>
-    <text name="CP_help_page_unloader_title" text="Harvester unloader"/>
+    <text name="CP_help_page_unloader_title" text="收割机卸载机"/>
     <text name="CP_help_page_unloaderGeneral_text" text="
-The unloader mode of Courseplay works with combines, harvesters and towed harvesters driven by Courseplay.
-It does not work with choppers.
-You can either use a regular trailer or an auger wagon to unload a combine.
-To empty trailers, you can use the Giants Helper or AutoDrive.
-Starting the unloader requires a few things:
-- You need to have a single trailer or auger wagon attached. Multiple trailers are not supported.
-- Use the Target Icon on the HUD to select the field being harvested. The unloader will unload all Courseplay driven harvesters working on that field.
-- You must be on the field or within 20 meters of the field to start the unloader.
-
-Unloaders have only a few settings you can tweak:
-- You can set the fill level at which the unloader will consider itself full. This
-is to avoid waiting for a combine to call with a trailer almost full.
-- You can use the offsets in the HUD to adjust the position of the unloader under the harvester's pipe.
+Courseplay的卸载机模式适用于由Courserplay驱动的联合收割机、收割机和牵引式收割机。
+它不适用于直升机。
+您可以使用普通拖车或螺旋输送器运输车卸载联合收割机。
+要清空拖车，您可以使用Giants Helper或AutoDrive。
+启动卸载机需要几件事：
+-你需要有一辆拖车或螺旋运输车。不支持多个拖车。
+-使用HUD上的目标图标选择正在收割的田地。卸载机将卸载所有在该场地上工作的Courseplay驱动的收割机。
+-您必须在现场或距离现场20米以内才能启动卸载机。
+卸载机只有几个设置可以调整：
+-您可以设置卸载机认为自己已满的液位。这
+是为了避免在拖车几乎装满的情况下等待联合收割机呼叫。
+-您可以使用抬头显示器（HUD）中的偏移量来调整收割机管道下卸粮器的位置.
 
 "/>
-    <text name="CP_help_page_unloaderTrailer_title" text="Using trailers"/>
+    <text name="CP_help_page_unloaderTrailer_title" text="使用拖车"/>
     <text name="CP_help_page_unloaderTrailer_text" text="
-If you use a trailer to unload, there are two ways to transport your harvest to a silo or to a selling point: the Giants helper
-or AutoDrive.
-You can either use the AI Menu and create a Job, then by activating the Giants helper function and unload target at the
-bottom of the list, or by activation of the wheel icon on the HUD.
-In the latter case, you have to choose the unload station after the wheel icon turns blue.
-
-Emptying a trailer with AutoDrive works the same as using a loading wagon, check out the AutoDrive Tutorials on the Internet.
+如果你用拖车卸货，有两种方法可以把你的收获运到筒仓或卖点：巨人队的助手
+或自动驾驶。
+您可以使用AI菜单并创建作业，然后通过激活Giants辅助功能并在
+列表底部，或通过激活HUD上的车轮图标。
+在后一种情况下，您必须在轮子图标变为蓝色后选择卸载站。
+使用AutoDrive清空拖车的工作原理与使用装载车的工作原理相同，请查看互联网上的AutoDrive教程.
 "/>
-    <text name="CP_help_page_unloaderAuger_title" text="Using auger wagons"/>
+    <text name="CP_help_page_unloaderAuger_title" text="使用螺旋运输车"/>
     <text name="CP_help_page_unloaderAuger_text" text="
-Auger wagons are very simple to use.
-Just like with trailers, you use the target icon to choose the field where you want to unload a combine or harvester.
-To start the unloader, place it again on the field or within 20 meters of the field.
-If the auger wagon is full, it automatically looks for a trailer on or near the field to overload into it.
-In case the trailer is full and the auger wagon still not empty, it will look for another trailer to unload to.
-Is no trailer available, it will continue to unload the combine.
+螺旋运输车使用起来非常简单。
+
+就像拖车一样，您可以使用目标图标来选择要卸载联合收割机或收割机的田地。
+
+要启动卸载机，请将其再次放置在场地上或距离场地20米以内。
+
+如果螺旋输送器车厢已满，它会自动在田地上或附近寻找超载的拖车。
+
+如果拖车已满，而螺旋输送器车仍未清空，它将寻找另一辆拖车卸货。
+
+如果没有可用的拖车，它将继续卸载联合收割机.
 "/>
-    <text name="CP_help_page_unloaderFieldUnload_title" text="Unload on the field"/>
+    <text name="CP_help_page_unloaderFieldUnload_title" text="在现场卸载"/>
     <text name="CP_help_page_unloaderFieldUnload_text" text="
-The unloading position can be selected with the unload marker.
-The position needs to be on the same field or near the field edge.
-If the marker points to an already existing heap, 
-then this heap is used to unload to.
-The direction of the marker is used for the unload direction.
-Additionally for trailers a tipside needs to be selected.
+可以使用卸载标记选择卸载位置。
+位置需要在同一场地上或场地边缘附近。
+如果标记指向已经存在的堆，
+然后这个堆被用来卸载到。
+标记的方向用于卸载方向。
+此外，对于拖车，需要选择倾侧.
 "/>
-    <text name="CP_help_page_bunker_title" text="Bunker silo worker"/>
+    <text name="CP_help_page_bunker_title" text="料仓筒仓工人"/>
     <text name="CP_help_page_bunkerGeneral_text" text="
-Courseplay is able to compact or distribute chaff in a bunker silo or push chaff in a wedge silo.
-Compacting is possible without any special tool, with a roller, weight or just the vehicle.
-For distribution, there are special tools. (e.g. der Fliegel DUO).
-For wedge silos, a shield is used to push the chaff to the back of the silo.
+Courseplay能够在料仓中压实或分配箔条，或者在楔形料仓中推动箔条。
+压实可以在没有任何专用工具、使用压路机、配重或仅使用车辆的情况下进行。
+对于分发，有专门的工具。（例如der Fliegel DUO）。
+对于楔形筒仓，使用护罩将谷壳推到筒仓后部.
 "/>
     <text name="CP_help_page_bunkerBasic_text" text="
-If the vehicle has a distributor or shield attached, the Silo mode is preselected. With only a weight or a roller attached
-you toggle through the starting point until the mode appears.
-Beside the working width, you can also select the direction the driver should drive into the silo. With a shield attached,
-the direction is selected automatically.
-Use the target icon on the HUD to select the silo on the AI Map. If will be shown with blue lines and lights up white if it is selected.
-The parking position is set with the marker &quot;parking position&quot; wich can also be used to drive there with the Giants helper
-before starting the actual work.
+如果车辆连接了分配器或护罩，则会预先选择筒仓模式。仅连接重物或滚轮
+在起始点之间切换，直到出现模式。
+除了工作宽度外，您还可以选择驾驶员驶入筒仓的方向。在附接屏蔽的情况下，
+方向是自动选择的。
+使用HUD上的目标图标在AI地图上选择思洛存储器。如果选中，则将显示为蓝色线条，并亮起白色。
+停车位置用标记“A”设置；停车位置”；维奇也可以和巨人队的助手一起开车去那里
+在开始实际工作之前.
 "/>
-    <text name="CP_help_page_siloLoader_title" text="Silo loading"/>
+    <text name="CP_help_page_siloLoader_title" text="筒仓装载"/>
     <text name="CP_help_page_siloLoaderGeneral_text" text="
-With this job it's possible to load from heaps on or near the field.
-Additionally it's possible to load from a bunker silo.
-The loader can be unloaded with an Courseplay unloader.
+有了这项工作，就可以从田地上或附近的堆中加载。
+此外，还可以从料仓中装载。
+可以使用Courseplay卸载器卸载加载程序.
 "/>
     <text name="CP_help_page_siloLoaderBasic_text" text="
-To start the loading-marker on the AI menu needs to be set.
-The marker detects heaps or silos and highlights them on the map.
-Now it's possible to start the helper.
+要启动AI菜单上的加载标记，需要设置。
+标记会检测到堆或竖井，并在地图上高亮显示它们。
+现在可以启动助手了.
 "/>
     <!---->
     <!--Input bindings-->
@@ -795,14 +795,14 @@ Now it's possible to start the helper.
     <text name="input_CP_OPEN_CLOSE_VEHICLE_SETTING_DISPLAY" text="CP: 打开迷你HUB"/>
     <text name="input_CP_START_STOP" text="CP: 启动/停止司机
 "/>
-    <text name="input_CP_CHANGE_STARTING_POINT" text="CP: Changes starting point"/>
-    <text name="input_CP_CLEAR_COURSE" text="CP: Clears currently loaded course"/>
-    <text name="input_CP_CHANGE_COURSE_VISIBILITY" text="Show the current course of the vehicle"/>
+    <text name="input_CP_CHANGE_STARTING_POINT" text="CP: 更改起点"/>
+    <text name="input_CP_CLEAR_COURSE" text="CP: 清除当前加载的课程"/>
+    <text name="input_CP_CHANGE_COURSE_VISIBILITY" text="显示车辆的当前路线"/>
     <text name="input_CP_TOGGLE_MOUSE" text="CP: 鼠标光标开/关"/>
     <text name="input_CP_OPEN_CLOSE_HUD" text="CP: 打开/关闭迷你HUB"/>
-    <text name="input_CP_OPEN_VEHICLE_SETTINGS" text="CP: Opens vehicle settings"/>
-    <text name="input_CP_OPEN_GLOBAL_SETTINGS" text="CP: Opens global settings"/>
-    <text name="input_CP_OPEN_COURSEGENERATOR_SETTINGS" text="CP: Open course generator/job menu"/>
-    <text name="input_CP_OPEN_COURSEMANAGER" text="CP: Opens course manager"/>
+    <text name="input_CP_OPEN_VEHICLE_SETTINGS" text="CP: 打开车辆设置"/>
+    <text name="input_CP_OPEN_GLOBAL_SETTINGS" text="CP: 打开全局设置"/>
+    <text name="input_CP_OPEN_COURSEGENERATOR_SETTINGS" text="CP: 开放课程生成器/作业菜单"/>
+    <text name="input_CP_OPEN_COURSEMANAGER" text="CP: 开设课程管理"/>
   </texts>
 </l10n>
